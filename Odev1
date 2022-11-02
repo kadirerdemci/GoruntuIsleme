@@ -1,0 +1,16 @@
+import cv2 as cv
+import matplotlib.pyplot as plt
+import numpy as np
+image = cv.imread ("cat.jpg",0)
+height= image.shape[0]
+width= image.shape[1]
+Histogram =np.zeros([256])
+for x in range (0,height):
+    for y in range (0,width):
+        Histogram [image[x,y]] +=1
+plt.plot(Histogram)
+plt.title("Histogram Çizimi")
+plt.show()
+
+# cv2 kütüphanesi kullanılarak öncelikle kullanmak istediğimiz dosya alınır. Daha sonra image metodları yardımıyla görüntü dosyasının boyutları diziye atılır ve dizininin
+# boyutunda bir 0 matrisi oluşturulur. Son olarak iç içe for döngüsü kullanılarak renk yoğunlukarı hesaplanır ve ekrana yazdırılır. 
