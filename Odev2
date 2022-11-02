@@ -1,0 +1,16 @@
+import cv2 as cv
+
+
+image = cv.imread("Cat.jpg",0)
+
+height = image.shape[0]
+width = image.shape[1]
+
+for i in range(0,height):
+    for j in range (0,width):
+        image[i][j] = 255 - image[i][j]
+
+cv .imshow("Cat",image)
+cv.waitKey()
+
+#  Resim dosyası okunarak resim boyutunda bir for döngüsü oluşturulur. For döngüsünün her bir admında pixel değerinin tersi alınarak yeni görüntü oluşturulur.
